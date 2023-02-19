@@ -10,7 +10,7 @@ public class Even {
         int a1 = (int) (Math.random() * round);
         System.out.println("Question: " + a1);
         System.out.print("Your answer: ");
-        String userAnswer = scEven.next();
+        String userAnswer = App.userInput();
         System.out.println();
         if (((a1 % 2 == 0) && (userAnswer.equals("yes"))) || ((a1 % 2 != 0) && (userAnswer.equals("no")))) {
             System.out.println("Correct!");
