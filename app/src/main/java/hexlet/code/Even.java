@@ -10,7 +10,6 @@ public class Even {
             System.out.println("Question: " + a1);
             System.out.print("Your answer: ");
             String userAnswer = App.userInput();
-            //System.out.println();
             if (((a1 % 2 == 0) && (userAnswer.equals("yes"))) || ((a1 % 2 != 0) && (userAnswer.equals("no")))) {
                 System.out.println("Correct!");
             } else {
