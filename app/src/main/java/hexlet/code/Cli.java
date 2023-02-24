@@ -1,7 +1,6 @@
 package hexlet.code;
 
 public class Cli {
-    //public static String username;
     public static String greeting() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May i have your name? ");
