@@ -2,6 +2,7 @@ package hexlet.code;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 public class Engine {
     public static final int ROUND = 100; // для получения целого случайного числа из double в диапазоне до 100
@@ -23,6 +24,7 @@ public class Engine {
             case ("2") -> Even.announce();
             case ("3") -> Calc.announce();
             case ("4") -> GCD.announce();
+            case ("5") -> Progression.announce();
             default -> { }
         }
         String[] pairQuestionAnswer = new String[2];
@@ -31,6 +33,7 @@ public class Engine {
                 case ("2") -> Even.task(pairQuestionAnswer);
                 case ("3") -> Calc.task(pairQuestionAnswer);
                 case ("4") -> GCD.task(pairQuestionAnswer);
+                case ("5") -> Progression.task(pairQuestionAnswer);
                 default -> { }
             }
             System.out.println("Question: " + pairQuestionAnswer[0]);
