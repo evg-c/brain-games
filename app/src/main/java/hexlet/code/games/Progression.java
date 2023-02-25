@@ -21,7 +21,6 @@ public class Progression {
         final int maxStep = 10;
         stepProgression = minStep + (int) (Math.random() * (maxStep - minStep)); // генерация числа от 2 до 10
         var resultString = new StringBuilder();
-        //resultString.append(startProgression);
         int currentElement = startProgression;
         for (int i = 1; i <= lenProgression; i++) {
             if (i > 1) {
