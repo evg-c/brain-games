@@ -12,7 +12,7 @@ public class GCD {
         int a2;
         a1 = (int) (Math.random() * Engine.ROUND);
         a2 = (int) (Math.random() * Engine.ROUND);
-        pairQuestionAnswer[0] = a1 + "  " + a2;
+        pairQuestionAnswer[0] = a1 + " " + a2;
         if (Math.abs(a1) == 0 || Math.abs(a2) == 0) {
             pairQuestionAnswer[1] = "0";
             return pairQuestionAnswer;
