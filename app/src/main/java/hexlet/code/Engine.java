@@ -51,9 +51,9 @@ public class Engine {
             }
         }
         if (result) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         } else {
-            System.out.println("Lets try again, " + userName);
+            System.out.println("Lets try again, " + userName + "!");
         }
     }
 }
