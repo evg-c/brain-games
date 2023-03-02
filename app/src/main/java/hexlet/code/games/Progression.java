@@ -8,18 +8,14 @@ public class Progression {
     }
 
     public static String[] task(String[] pairQuestionAnswer) {
-        int lenProgression;                             // длина прогрессии
-        final int minLen = 5;
-        final int maxLen = 10;
-        lenProgression = minLen + (int) (Math.random() * (maxLen - minLen)); // генерация случайного числа от 5 до 10
-        int positionProgression;                           // позиция в прогрессии
-        positionProgression = 1 + (int) (Math.random() * (lenProgression - 1)); // число от 1 до длины прогрессии
-        int startProgression;                                   // начальное число прогрессии
-        startProgression = (int) (Math.random() * Engine.ROUND); // генерация случайного числа от 0 до 100
-        int stepProgression;                             // шаг прогрессии
-        final int minStep = 2;
-        final int maxStep = 10;
-        stepProgression = minStep + (int) (Math.random() * (maxStep - minStep)); // генерация числа от 2 до 10
+        final int minLenProgression = 5;   // минимальная длина прогрессии
+        final int maxLenProgression = 10;  // максимальная длина прогрессии
+        int lenProgression = minLenProgression + (int) (Math.random() * (maxLenProgression - minLenProgression));
+        int positionProgression = 1 + (int) (Math.random() * (lenProgression - 1)); // генерация позиции от 1 до длины
+        int startProgression = (int) (Math.random() * Engine.ROUND); // начальное число прогрессии от 0 до 100
+        final int minStepProgression = 2;  // минимальный шаг прогрессии
+        final int maxStepProgression = 10; // максимальный шаг прогрессии
+        int stepProgression = minStepProgression + (int) (Math.random() * (maxStepProgression - minStepProgression));
         var resultString = new StringBuilder();
         int currentElement = startProgression;
         for (int i = 1; i <= lenProgression; i++) {
