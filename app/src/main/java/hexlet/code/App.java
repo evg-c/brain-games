@@ -1,4 +1,9 @@
 package hexlet.code;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -15,7 +20,17 @@ public class App {
         String gameNumber = userInput();
         System.out.println("Your choice: " + gameNumber);
         System.out.println(" ");
-        Engine.general(gameNumber);
+        switch (gameNumber) {
+            case ("1") -> Cli.greeting();
+            case ("2") -> Even.task();
+            case ("3") -> Calc.task();
+            case ("4") -> GCD.task();
+            case ("5") -> Progression.task();
+            case ("6") -> Prime.task();
+            default -> {
+                return;
+            }
+        }
     }
     public static String userInput() {
         Scanner sc = new Scanner(System.in);
