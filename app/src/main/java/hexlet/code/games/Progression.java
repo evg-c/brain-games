@@ -1,35 +1,44 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import java.util.Random;
 
 public class Progression {
-    public static void announce() {
-        System.out.println("What number is missing in the progression?.");
-    }
-
-    public static String[] task(String[] pairQuestionAnswer) {
-        final int minLenProgression = 5;   // минимальная длина прогрессии
-        final int maxLenProgression = 10;  // максимальная длина прогрессии
-        int lenProgression = minLenProgression + (int) (Math.random() * (maxLenProgression - minLenProgression));
-        int positionProgression = 1 + (int) (Math.random() * (lenProgression - 1)); // генерация позиции от 1 до длины
-        int startProgression = (int) (Math.random() * Engine.ROUND); // начальное число прогрессии от 0 до 100
-        final int minStepProgression = 2;  // минимальный шаг прогрессии
-        final int maxStepProgression = 10; // максимальный шаг прогрессии
-        int stepProgression = minStepProgression + (int) (Math.random() * (maxStepProgression - minStepProgression));
-        var resultString = new StringBuilder();
-        int currentElement = startProgression;
-        for (int i = 1; i <= lenProgression; i++) {
-            if (i > 1) {
-                currentElement = currentElement + stepProgression;
+    public static void task() {
+        String ruleOfGame = "What number is missing in the progression?";  // правило игры
+        String username = Engine.startAndReceiveName(ruleOfGame);
+        Random rnd = new Random();
+        final int minLengthProgression = 5;   // минимальная длина прогрессии
+        final int maxLengthProgression = 10;  // максимальная длина прогрессии
+        final int scopeOfRandomTo100 = 100;   // диапазон генерации случайного числа (до 100)
+        final int minStepProgression = 2;     // минимальный шаг прогрессии
+        final int maxStepProgression = 10;    // максимальный шаг прогрессии
+        final int countOfTests = 3;           // число попыток
+        for (int i = 1; i <= countOfTests; i++) {
+            int lengthProgression = rnd.nextInt(minLengthProgression, maxLengthProgression);  // генерация длины
+            int positionProgression = rnd.nextInt(1,  lengthProgression);  // генерация позиции от 1 до длины
+            int startProgression = rnd.nextInt(scopeOfRandomTo100); // генерация начального числа прогрессии
+            int stepProgression = rnd.nextInt(minStepProgression, maxStepProgression); // генерация шага прогрессии
+            String answer = "";
+            var resultString = new StringBuilder();
+            int currentElement = startProgression;
+            for (int j = 1; j <= lengthProgression; j++) {
+                if (j > 1) {
+                    currentElement = currentElement + stepProgression;
+                }
+                if (j == positionProgression) {
+                    resultString.append(".. ");
+                    answer = Integer.toString(currentElement);
+                } else {
+                    resultString.append(currentElement).append(" ");
+                }
             }
-            if (i == positionProgression) {
-                resultString.append(".. ");
-                pairQuestionAnswer[1] = Integer.toString(currentElement);
-            } else {
-                resultString.append(currentElement).append(" ");
+            String question = resultString.toString();
+            if (!Engine.compareQuestionAnswer(question, answer)) {
+                Engine.finish(username, false);
+                return;
             }
         }
-        pairQuestionAnswer[0] = resultString.toString();
-        return pairQuestionAnswer;
+        Engine.finish(username, true);
     }
 }
