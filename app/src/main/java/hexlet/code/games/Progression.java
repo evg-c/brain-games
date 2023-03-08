@@ -29,21 +29,21 @@ public class Progression {
         Engine.finish(username, true);
     }
     public static String[] createProgression(int start, int length, int step, int pos) {
+        var progression = new StringBuilder();
+        int currentElementProgression = start;
         String[] questionAnswer = new String[2];
-        var resultString = new StringBuilder();
-        int currentElement = start;
         for (int j = 1; j <= length; j++) {
             if (j > 1) {
-                currentElement = currentElement + step;
+                currentElementProgression = currentElementProgression + step;
             }
             if (j == pos) {
-                resultString.append(".. ");
-                questionAnswer[1] = Integer.toString(currentElement);
+                progression.append(".. ");
+                questionAnswer[1] = Integer.toString(currentElementProgression);
             } else {
-                resultString.append(currentElement).append(" ");
+                progression.append(currentElementProgression).append(" ");
             }
         }
-        questionAnswer[0] = resultString.toString();
+        questionAnswer[0] = progression.toString();
         return questionAnswer;
     }
 }
