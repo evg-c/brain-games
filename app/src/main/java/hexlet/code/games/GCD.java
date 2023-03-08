@@ -26,7 +26,7 @@ public class GCD {
     }
 
     public static int findGCD(int number1, int number2) {
-        if (numberIs0(number1, number2)) {
+        if (Math.abs(number1) == 0 || Math.abs(number2) == 0) {
             return 0;
         }
         if (numberIsOne(number1, number2)) {
@@ -51,9 +51,6 @@ public class GCD {
             }
         }
         return nod;
-    }
-    public static boolean numberIs0(int number1, int number2) {
-        return Math.abs(number1) == 0 || Math.abs(number2) == 0;
     }
     public static boolean numberIsOne(int number1, int number2) {
         return Math.abs(number1) == 1 || Math.abs(number2) == 1;
