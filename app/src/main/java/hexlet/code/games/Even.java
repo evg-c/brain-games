@@ -5,7 +5,7 @@ import java.util.Random;
 public class Even {
     public static void task() {
         String ruleOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";  // правило игры
-        String username = Engine.startAndReceiveName(ruleOfGame);
+        String userName = Engine.startAndReceiveName(ruleOfGame);
         Random rnd = new Random();
         int randomNumber;                    // переменная для хранения случайного числа
         final int scopeOfRandomTo100 = 100;  // диапазон генерации случайного числа (до 100)
@@ -15,11 +15,11 @@ public class Even {
             String question = Integer.toString(randomNumber);
             String answer = (isEven(randomNumber) ? "yes" : "no");
             if (!Engine.compareQuestionAnswer(question, answer)) {
-                Engine.finish(username, false);
+                Engine.finish(userName, false);
                 return;
             }
         }
-        Engine.finish(username, true);
+        Engine.finish(userName, true);
     }
 
     public static boolean isEven(int number) {
