@@ -16,7 +16,7 @@ public class GCD {
             int randomNumber1 = rnd.nextInt(scopeOfRandomTo100); // переменная для хранения случайного числа 1
             int randomNumber2 = rnd.nextInt(scopeOfRandomTo100); // переменная для хранения случайного числа 2
             String question = randomNumber1 + " " + randomNumber2;
-            String answer = Integer.toString(findNod(randomNumber1, randomNumber2));
+            String answer = Integer.toString(findGCD(randomNumber1, randomNumber2));
             if (!Engine.compareQuestionAnswer(question, answer)) {
                 Engine.finish(username, false);
                 return;
@@ -25,11 +25,11 @@ public class GCD {
         Engine.finish(username, true);
     }
 
-    public static int findNod(int number1, int number2) {
-        if (anyNumberIs(0, number1, number2)) {
+    public static int findGCD(int number1, int number2) {
+        if (numberIs0(number1, number2)) {
             return 0;
         }
-        if (anyNumberIs(1, number1, number2)) {
+        if (numberIsOne(number1, number2)) {
             return 1;
         }
         if (Math.abs(number1) == Math.abs(number2)) {
@@ -52,7 +52,10 @@ public class GCD {
         }
         return nod;
     }
-    public static boolean anyNumberIs(int number, int a1, int a2) {
-        return Math.abs(a1) == number || Math.abs(a2) == number;
+    public static boolean numberIs0(int number1, int number2) {
+        return Math.abs(number1) == 0 || Math.abs(number2) == 0;
+    }
+    public static boolean numberIsOne(int number1, int number2) {
+        return Math.abs(number1) == 1 || Math.abs(number2) == 1;
     }
 }
