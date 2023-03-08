@@ -14,8 +14,8 @@ public class Prime {
         Random rnd = new Random();
         for (int i = 1; i <= countOfTests; i++) {
             randomNumber = rnd.nextInt(scopeOfRandomTo100);
-            String question = Integer.toString(randomNumber);
             String answer = (isPrime(randomNumber) ? "yes" : "no");
+            String question = Integer.toString(randomNumber);
             if (!Engine.compareQuestionAnswer(question, answer)) {
                 Engine.finish(username, false);
                 return;
