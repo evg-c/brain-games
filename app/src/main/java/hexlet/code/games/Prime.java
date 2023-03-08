@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Prime {
     public static void task() {
-        String ruleOfGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";  // правило игры
-        String username = Engine.startAndReceiveName(ruleOfGame);
+        String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";  // правило игры
+        String username = Engine.startAndReceiveName(rule);
         Random rnd = new Random();
         int randomNumber;                    // переменная для хранения случайного числа
         final int scopeOfRandomTo100 = 100;  // диапазон генерации случайного числа (до 100)
