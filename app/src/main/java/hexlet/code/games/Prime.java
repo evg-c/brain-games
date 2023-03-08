@@ -7,11 +7,11 @@ import java.util.Random;
 public class Prime {
     public static void task() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";  // правило игры
-        String username = Engine.startAndReceiveName(rule);
-        Random rnd = new Random();
         int randomNumber;                    // переменная для хранения случайного числа
         final int scopeOfRandomTo100 = 100;  // диапазон генерации случайного числа (до 100)
+        String username = Engine.startAndReceiveName(rule);
         final int countOfTests = 3;          // число попыток
+        Random rnd = new Random();
         for (int i = 1; i <= countOfTests; i++) {
             randomNumber = rnd.nextInt(scopeOfRandomTo100);
             String question = Integer.toString(randomNumber);
