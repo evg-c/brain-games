@@ -28,11 +28,15 @@ public class Progression {
         }
         Engine.finish(username, true);
     }
-    public static String[] createProgression(int start, int length, int step, int pos) {
-        var progression = new StringBuilder();
-        int currentElementProgression = start;
+    public static String[] createProgression(int startProgression, int lengthProgression, int step, int pos) {
+        // step - шаг прогрессии
+        // pos  - позиция в прогрессии, которую надо заполнить
+        var progression = new StringBuilder();    // строка создаваемой прогрессии
+        // текущий элемент прогрессии
+        int currentElementProgression = startProgression;
+        // пара вопрос - ответ, которую надо сформировать
         String[] questionAnswer = new String[2];
-        for (int j = 1; j <= length; j++) {
+        for (int j = 1; j <= lengthProgression; j++) {
             if (j > 1) {
                 currentElementProgression = currentElementProgression + step;
             }
