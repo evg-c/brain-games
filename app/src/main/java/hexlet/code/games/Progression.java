@@ -19,7 +19,7 @@ public class Progression {
             int positionProgression = rnd.nextInt(1,  lengthProgression);  // генерация позиции от 1 до длины
             int startProgression = rnd.nextInt(scopeOfRandomTo100); // генерация начального числа прогрессии
             int stepProgression = rnd.nextInt(minStepProgression, maxStepProgression); // генерация шага прогрессии
-            String[] pairQA = new String[2];
+            String[] pairQA;
             pairQA = createProgression(startProgression, lengthProgression, stepProgression, positionProgression);
             if (!Engine.compareQuestionAnswer(pairQA[0], pairQA[1])) {
                 Engine.finish(username, false);
