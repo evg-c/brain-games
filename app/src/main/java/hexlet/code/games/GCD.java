@@ -29,11 +29,11 @@ public class GCD {
         if (Math.abs(number1) == 0 || Math.abs(number2) == 0) {
             return 0;
         }
-        if (numberIsOne(number1, number2)) {
-            return 1;
-        }
         if (Math.abs(number1) == Math.abs(number2)) {
             return number1;
+        }
+        if (Math.abs(number1) == 1 || Math.abs(number2) == 1) {
+            return 1;
         }
         int nod = 0;
         while ((Math.abs(number1) > 0) && (Math.abs(number2) > 0)) {
@@ -51,8 +51,5 @@ public class GCD {
             }
         }
         return nod;
-    }
-    public static boolean numberIsOne(int number1, int number2) {
-        return Math.abs(number1) == 1 || Math.abs(number2) == 1;
     }
 }
