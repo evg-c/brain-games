@@ -26,20 +26,26 @@ public class GCD {
     }
 
     public static int findGCD(int number1, int number2) {
-        //if (Math.abs(number1) == 0 || Math.abs(number2) == 0) {
-        //    return 0;
-        //}
-        if (number1 == 0) {
-            return number2;
+        switch (number1) {
+            case (0) -> {
+                return number2;
+            }
+            case (1) -> {
+                return 1;
+            }
+            default -> { }
         }
         if (Math.abs(number1) == Math.abs(number2)) {
             return number1;
         }
-        if (number2 == 0) {
-            return number1;
-        }
-        if (Math.abs(number1) == 1 || Math.abs(number2) == 1) {
-            return 1;
+        switch (number2) {
+            case (0) -> {
+                return number1;
+            }
+            case (1) -> {
+                return 1;
+            }
+            default -> { }
         }
         int nod = 0;
         while ((Math.abs(number1) > 0) && (Math.abs(number2) > 0)) {
