@@ -23,6 +23,7 @@ public class Prime {
         }
         Engine.finish(username, true);
     }
+
     public static boolean isPrime(int number) {
         final int firstNotPrime = 4;
         if (number < firstNotPrime) {
