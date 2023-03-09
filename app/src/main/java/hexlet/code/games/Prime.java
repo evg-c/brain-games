@@ -26,6 +26,9 @@ public class Prime {
 
     public static boolean isPrime(int number) {
         final int firstNotPrime = 4;
+        if (number == 0) {
+            return false;
+        }
         if (number < firstNotPrime) {
             return true;
         }
