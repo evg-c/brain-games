@@ -1,28 +1,24 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
 
 public class GCD {
-
-    public static void task() {
-        String ruleOfGame = "Find the greatest common divisor of given numbers.";  // правило игры
-        String username = Engine.startAndReceiveName(ruleOfGame);
+    static final String RULE_OF_GAME = "Find the greatest common divisor of given numbers.";  // правило игры
+    static final int SCOPE_OF_RANDOM_TO_100 = 100;       // диапазон генерации случайного числа (до 100)
+    static final int COUNT_OF_TESTS = 3;          // число попыток
+    public static void gameGCD() {
         Random rnd = new Random();
-        final int scopeOfRandomTo100 = 100;       // диапазон генерации случайного числа (до 100)
-        final int countOfTests = 3;          // число попыток
-        for (int i = 1; i <= countOfTests; i++) {
-            int randomNumber1 = rnd.nextInt(scopeOfRandomTo100); // переменная для хранения случайного числа 1
-            int randomNumber2 = rnd.nextInt(scopeOfRandomTo100); // переменная для хранения случайного числа 2
+        String[][] arrayQuestionsAnswers = new String[COUNT_OF_TESTS][2];
+        for (int i = 0; (i < arrayQuestionsAnswers.length); i++) {
+            int randomNumber1 = rnd.nextInt(SCOPE_OF_RANDOM_TO_100); // переменная для хранения случайного числа 1
+            int randomNumber2 = rnd.nextInt(SCOPE_OF_RANDOM_TO_100); // переменная для хранения случайного числа 2
             String question = randomNumber1 + " " + randomNumber2;
             String answer = Integer.toString(findGCD(randomNumber1, randomNumber2));
-            if (!Engine.compareQuestionAnswer(question, answer)) {
-                Engine.finish(username, false);
-                return;
-            }
+            arrayQuestionsAnswers[i][0] = question;
+            arrayQuestionsAnswers[i][1] = answer;
         }
-        Engine.finish(username, true);
+        Engine.compareQuestionAnswer(RULE_OF_GAME, arrayQuestionsAnswers);
     }
 
     public static int findGCD(int number1, int number2) {
