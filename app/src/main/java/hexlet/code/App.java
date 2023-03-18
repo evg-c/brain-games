@@ -22,11 +22,11 @@ public class App {
         System.out.println(" ");
         switch (gameNumber) {
             case ("1") -> Cli.greeting();
-            case ("2") -> Even.task();
-            case ("3") -> Calc.task();
-            case ("4") -> GCD.task();
-            case ("5") -> Progression.task();
-            case ("6") -> Prime.task();
+            case ("2") -> Even.gameEven();
+            case ("3") -> Calc.gameCalc();
+            case ("4") -> GCD.gameGCD();
+            case ("5") -> Progression.gameProgression();
+            case ("6") -> Prime.gamePrime();
             default -> {
                 return;
             }
