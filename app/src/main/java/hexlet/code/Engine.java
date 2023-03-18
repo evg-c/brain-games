@@ -1,35 +1,28 @@
 package hexlet.code;
 
 public class Engine {
-    public static final int ROUND = 100; // для получения целого случайного числа из double в диапазоне до 100
-    public static final int ROUND2 = 3;  // для получения целого случайного числа из double в диапазоне до 3
-
-    public static String startAndReceiveName(String start) {
+    static final int COUNT_TESTS = 3;          // число попыток
+    public static void compareQuestionAnswer(String rule, String[][] arrQuestionsAnswers) {
         String nameUser = Cli.greeting();
-        System.out.println(start);
-        return nameUser;
-    }
-
-    public static boolean compareQuestionAnswer(String question, String answer) {
-        boolean result;
-        System.out.println("Question: " + question);
-        System.out.print("Your answer: ");
-        String userAnswer = App.userInput();
-        if (userAnswer.trim().equals(answer)) {
-            System.out.println("Correct!");
-            result = true;
-        } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + answer + ".");
-            result = false;
+        System.out.println(rule);
+        boolean result = true;
+        for (int i = 0; i < COUNT_TESTS; i++) {
+            System.out.println("Question: " + arrQuestionsAnswers[i][0]);
+            System.out.print("Your answer: ");
+            String userAnswer = App.userInput();
+            if (userAnswer.trim().equals(arrQuestionsAnswers[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                String out = userAnswer + " is wrong answer ;(. Correct answer was " + arrQuestionsAnswers[i][1] + ".";
+                System.out.println(out);
+                result = false;
+                break;
+            }
         }
-        return result;
-    }
-
-    public static void finish(String username, boolean result) {
         if (result) {
-            System.out.println("Congratulations, " + username + "!");
+            System.out.println("Congratulations, " + nameUser + "!");
         } else {
-            System.out.println("Let's try again, " + username + "!");
+            System.out.println("Let's try again, " + nameUser + "!");
         }
     }
 }
