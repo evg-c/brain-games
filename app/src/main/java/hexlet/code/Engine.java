@@ -1,25 +1,32 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
     static final int COUNT_TESTS = 3;          // число попыток
+
     public static void compareQuestionAnswer(String rule, String[][] arrQuestionsAnswers) {
-        String nameUser = Cli.greeting();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner sc = new Scanner(System.in);
+        String nameUser = sc.next();
+        System.out.println("Hello, " + nameUser + "!");
         System.out.println(rule);
-        boolean result = true;
+        boolean isSuccess = true;
         for (int i = 0; i < COUNT_TESTS; i++) {
             System.out.println("Question: " + arrQuestionsAnswers[i][0]);
             System.out.print("Your answer: ");
-            String userAnswer = App.userInput();
+            String userAnswer = sc.next();
             if (userAnswer.trim().equals(arrQuestionsAnswers[i][1])) {
                 System.out.println("Correct!");
             } else {
                 String out = userAnswer + " is wrong answer ;(. Correct answer was " + arrQuestionsAnswers[i][1] + ".";
                 System.out.println(out);
-                result = false;
+                isSuccess = false;
                 break;
             }
         }
-        if (result) {
+        if (isSuccess) {
             System.out.println("Congratulations, " + nameUser + "!");
         } else {
             System.out.println("Let's try again, " + nameUser + "!");
