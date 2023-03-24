@@ -1,9 +1,9 @@
 package hexlet.code;
-import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameCalc;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GameProgression;
+import hexlet.code.games.GamePrime;
 
 import java.util.Scanner;
 
@@ -22,16 +22,17 @@ public class App {
         System.out.println(" ");
         switch (gameNumber) {
             case ("1") -> Cli.greeting();
-            case ("2") -> Even.gameEven();
-            case ("3") -> Calc.gameCalc();
-            case ("4") -> GCD.gameGCD();
-            case ("5") -> Progression.gameProgression();
-            case ("6") -> Prime.gamePrime();
+            case ("2") -> GameEven.gameEven();
+            case ("3") -> GameCalc.gameCalc();
+            case ("4") -> GameGCD.gameGCD();
+            case ("5") -> GameProgression.gameProgression();
+            case ("6") -> GamePrime.gamePrime();
             default -> {
                 return;
             }
         }
     }
+
     public static String userInput() {
         Scanner sc = new Scanner(System.in);
         return sc.next();
