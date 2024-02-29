@@ -8,4 +8,11 @@
 [![asciicast](https://asciinema.org/a/pwcivoDtWWlTbtCKP5IQjyJLE.svg)](https://asciinema.org/a/pwcivoDtWWlTbtCKP5IQjyJLE)
 [![asciicast](https://asciinema.org/a/qgzlpi4TQ6SdqhGihLLMi3HA6.svg)](https://asciinema.org/a/qgzlpi4TQ6SdqhGihLLMi3HA6)
 
+### Brain games
 
+Игры разума
+
+### Как работает
+
+Небольшая консольная утилита из пяти игр (калькулятор, прогрессия, определение четного числа,
+определение наибольшего общего делителя, определение простого числа). 
